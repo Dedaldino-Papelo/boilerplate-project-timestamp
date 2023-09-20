@@ -37,24 +37,23 @@ app.get('/api/:date', function(req, res){
 
     unixTimeStamp ? res.json({"unix": unixTimeStamp, "utc": utcDate})
                   : res.json({ error: "Invalid Date" })
-  } else {
+  } /* else {
     const unixTimestamp = parseInt(dateString)
     const actualDate = new Date(unixTimestamp)
     const utcDate = actualDate.toUTCString()
 
     res.json({ unix: unixTimestamp, utc: utcDate })
-  }
+  } */
 })
+   
 
 app.get('/api/', function(req, res){
   const currentDate  = new Date().toUTCString()
   const currentUnix  = Date.parse(currentDate)
 
   res.json({ unix: currentUnix, utc: currentDate })
-  
+
 })
-
-
 
 // listen for requests :)
 var listener = app.listen(process.env.PORT, function () {
