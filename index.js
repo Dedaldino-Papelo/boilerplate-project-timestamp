@@ -47,6 +47,7 @@ app.get('/api/:date', function(req, res){
 })
    
 
+// Requests with empty date parameter
 app.get('/api/', function(req, res){
   const currentDate  = new Date().toUTCString()
   const currentUnix  = Date.parse(currentDate)
